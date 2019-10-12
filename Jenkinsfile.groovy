@@ -1,8 +1,8 @@
 pipeline{
     agent any
     parameters{
-        string(name: "release_version")
-        string(name: "development_version")
+        string(name: "release_version", description: "Which version?")
+        string(name: "development_version", description: "Which version?")
     }
     stages{
         stage ('build') {
