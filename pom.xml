@@ -16,7 +16,9 @@
         </dependency>
     </dependencies>
 
-
+    <scm>
+        <connection>scm:git:https://github.com/bounis/jenkins-kata.git</connection>
+    </scm>
     <distributionManagement>
         <repository>
             <id>local</id>
