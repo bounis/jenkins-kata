@@ -8,5 +8,11 @@
     <artifactId>company</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <distributionManagement>
+        <repository>
+            <id>local</id>
+            <url>http://localhost:8081/repository/local-repo/</url>
+        </repository>
+    </distributionManagement>
 
 </project>
