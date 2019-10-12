@@ -9,7 +9,7 @@ pipeline{
             steps{
                 checkout scm
                 sh"mvn release:clean release:prepare release:perform -DreleaseVersion=${params.releaseVersion}" +
-                        " -DdevelopmentVersion=${params.developmentVersion} -Dtag=${params.releaseVversion}"
+                        " -DdevelopmentVersion=${params.developmentVersion} -Dtag=${params.releaseVersion}"
             }
         }
     }
