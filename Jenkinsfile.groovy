@@ -8,8 +8,8 @@ pipeline{
         stage ('build') {
             steps{
                 checkout scm
-                sh"mvn release:clean release:prepare release:perform -DreleaseVersion=${params.releaseVversion}" +
-                        " -DdevelopmentVersion=${params.developmentVersion} -Dtag=${params.developmentVersion}"
+                sh"mvn release:clean release:prepare release:perform -DreleaseVersion=${params.releaseVersion}" +
+                        " -DdevelopmentVersion=${params.developmentVersion} -Dtag=${params.releaseVversion}"
             }
         }
     }
