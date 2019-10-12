@@ -1,10 +1,11 @@
 pipeline{
     stages{
-        stage ('build)' {
+        stage ('build') {
             steps{
                 checkout scm
                 echo "hello world"
             }
         }
     }
+
 }
