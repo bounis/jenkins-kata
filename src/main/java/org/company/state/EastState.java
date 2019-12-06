@@ -2,8 +2,12 @@ package org.company.state;
 
 public class EastState extends State {
 
-
+    private static final EastState eastState = new EastState();
     private EastState() {
+    }
+
+    public static EastState getInstance() {
+        return eastState;
     }
 
     @Override

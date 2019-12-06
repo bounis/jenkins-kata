@@ -2,6 +2,7 @@ package org.company.state;
 
 public class WestState extends State {
 
+    private static final WestState westState = new WestState();
     @Override
     public void turnRight() {
         this.mower.getPosition().setOrientation(Orientation.NORTH);

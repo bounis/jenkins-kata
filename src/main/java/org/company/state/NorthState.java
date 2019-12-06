@@ -1,6 +1,16 @@
 package org.company.state;
 
 public class NorthState extends State {
+
+    private static final NorthState northState = new NorthState();
+
+    private NorthState() {
+    }
+
+    public static NorthState getInstance() {
+        return northState;
+    }
+
     @Override
     public void turnRight() {
         mower.getPosition().setOrientation(Orientation.EAST);
