@@ -2,34 +2,36 @@ package org.company.state;
 
 public class Mower {
 
-    private int absciss;
-    private int ordinate;
+    private Position position;
     private State state;
 
     public Mower() {
     }
 
 
-    public Mower(int absciss, int ordinate, State state) {
-        this.absciss = absciss;
-        this.ordinate = ordinate;
+    public void changeState(State state) {
         this.state = state;
     }
 
-    public int getAbsciss() {
-        return absciss;
+    public void turnRight() {
+        this.state.turnRight();
     }
 
-    public void setAbsciss(int absciss) {
-        this.absciss = absciss;
+    public void turnLeft() {
+        this.state.turnLeft();
     }
 
-    public int getOrdinate() {
-        return ordinate;
+    public void advance() {
+        this.state.advance();
     }
 
-    public void setOrdinate(int ordinate) {
-        this.ordinate = ordinate;
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
     public State getState() {

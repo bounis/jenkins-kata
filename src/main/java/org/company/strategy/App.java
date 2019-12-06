@@ -1,4 +1,4 @@
-package strategy;
+package org.company.strategy;
 
 public class App {
 

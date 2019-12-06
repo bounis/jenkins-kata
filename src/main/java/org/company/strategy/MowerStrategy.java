@@ -1,4 +1,4 @@
-package strategy;
+package org.company.strategy;
 
 public interface MowerStrategy {
     void turnRight(Mower mower);

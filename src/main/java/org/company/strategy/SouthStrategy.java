@@ -1,6 +1,6 @@
-package strategy;
+package org.company.strategy;
 
-public class EastStrategy implements MowerStrategy {
+public class SouthStrategy implements MowerStrategy {
     @Override
     public void turnRight(Mower mower) {
 

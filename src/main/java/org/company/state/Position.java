@@ -1,16 +1,16 @@
-package strategy;
+package org.company.state;
 
-import org.company.state.Orientation;
+public class Position {
 
-public class Mower {
     private int absciss;
     private int ordinate;
     private Orientation orientation;
 
-    public Mower() {
+
+    public Position() {
     }
 
-    public Mower(int absciss, int ordinate, Orientation orientation) {
+    public Position(int absciss, int ordinate, Orientation orientation) {
         this.absciss = absciss;
         this.ordinate = ordinate;
         this.orientation = orientation;
