@@ -4,7 +4,8 @@ public class TheApp {
 
     public static void main(String[] args) {
         BusinessService businessService = new BusinessService();
-        Mower mower = new Mower(1, 2, new NorthState());
+        Position position = new Position(1, 2, Orientation.NORTH);
+        Mower mower = new Mower(position, new NorthState());
         businessService.start(mower);
     }
 }

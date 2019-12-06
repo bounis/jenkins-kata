@@ -1,17 +1,18 @@
 package org.company.state;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Mower {
 
     private Position position;
     private State state;
-
-    public Mower() {
-    }
-
-
-    public void changeState(State state) {
-        this.state = state;
-    }
 
     public void turnRight() {
         this.state.turnRight();
@@ -25,20 +26,4 @@ public class Mower {
         this.state.advance();
     }
 
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
-    public State getState() {
-        return state;
-    }
-
-    public void setState(State state) {
-        this.state = state;
-    }
 }

@@ -3,18 +3,18 @@ package org.company.state;
 public class NorthState extends State {
     @Override
     public void turnRight() {
-        mower.setOrientation(Orientation.EAST);
-        mower.changeState(new EastState());
+        mower.getPosition().setOrientation(Orientation.EAST);
+        mower.setState(new EastState());
     }
 
     @Override
     public void turnLeft() {
-        mower.
-        mower.changeState(new WestState());
+        mower.getPosition().setOrientation(Orientation.WEST);
+        mower.setState(new WestState());
     }
 
     @Override
     public void advance() {
-        mower.setOrdinate(mower.getOrdinate() + 1);
+        mower.getPosition().setOrdinate(mower.getPosition().getOrdinate() + 1);
     }
 }

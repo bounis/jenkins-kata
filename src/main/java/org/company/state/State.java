@@ -1,5 +1,8 @@
 package org.company.state;
 
+import lombok.Setter;
+
+@Setter
 public abstract class State {
 
     protected Mower mower;
