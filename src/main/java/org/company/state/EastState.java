@@ -12,18 +12,22 @@ public class EastState extends State {
 
     @Override
     public void turnRight() {
-        this.mower.getPosition().setOrientation(Orientation.SOUTH);
-        this.mower;
-        new SouthState().
+        mower.getPosition().setOrientation(Orientation.SOUTH);
+        SouthState southState = SouthState.getInstance();
+        southState.setMower(mower);
+        mower.setState(southState);
     }
 
     @Override
     public void turnLeft() {
-
+        this.mower.getPosition().setOrientation(Orientation.NORTH);
+        NorthState northState = NorthState.getInstance();
+        northState.setMower(mower);
+        mower.setState(northState);
     }
 
     @Override
     public void advance() {
-
+        mower.getPosition().setAbsciss(mower.getPosition().getAbsciss() + 1);
     }
 }

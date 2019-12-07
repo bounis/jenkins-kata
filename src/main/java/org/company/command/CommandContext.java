@@ -1,22 +1,19 @@
 package org.company.command;
 
-import java.util.List;
+import org.company.exception.UnknownCommandException;
 
 public class CommandContext {
 
     public static Command resolveCommand(String s) {
-        Command command = null;
+
         switch (s) {
             case "A":
-                command = CommandAdvance.getInstance();
-                break;
+                return CommandAdvance.getInstance();
             case "D":
-                command = CommandTurnRight.getInstance();
-                break;
+                return CommandTurnRight.getInstance();
             case "G":
-                command = CommandTurnLeft.getInstance();
-                break;
+                return CommandTurnLeft.getInstance();
         }
-        return command;
+        throw new UnknownCommandException("unknown passed command");
     }
 }

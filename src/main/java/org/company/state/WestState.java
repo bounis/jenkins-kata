@@ -3,20 +3,31 @@ package org.company.state;
 public class WestState extends State {
 
     private static final WestState westState = new WestState();
+
+    private WestState() {
+    }
+
+    public static WestState getInstance() {
+        return westState;
+    }
     @Override
     public void turnRight() {
         this.mower.getPosition().setOrientation(Orientation.NORTH);
-        this.mower.setState(new NorthState());
+        NorthState northState = NorthState.getInstance();
+        northState.setMower(mower);
+        mower.setState(northState);
     }
 
     @Override
     public void turnLeft() {
-        this.mower.getPosition().setOrientation(Orientation.SOUTH);
-        this.mower.setState(new SouthState());
+        mower.getPosition().setOrientation(Orientation.SOUTH);
+        SouthState southState = SouthState.getInstance();
+        southState.setMower(mower);
+        mower.setState(southState);
     }
 
     @Override
     public void advance() {
-        this.mower.getPosition().setAbsciss(this.mower.getPosition().getAbsciss() - 1);
+        mower.getPosition().setAbsciss(mower.getPosition().getAbsciss() - 1);
     }
 }
