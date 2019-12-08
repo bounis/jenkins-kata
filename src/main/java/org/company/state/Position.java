@@ -16,4 +16,11 @@ public class Position {
     private int absciss;
     private int ordinate;
     private Orientation orientation;
+
+
+    public static Position createPosition(String positonLine) {
+        String regex = " ";
+        String[] strings = positonLine.split(regex);
+        return new Position(Integer.parseInt(strings[0]), Integer.parseInt(strings[1]), Orientation.fromValue(strings[2]));
+    }
 }
