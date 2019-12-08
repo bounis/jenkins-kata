@@ -1,15 +1,13 @@
 package org.company.state;
 
-import java.io.IOException;
-import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.stream.IntStream;
-
-import org.company.command.Command;
 import org.company.command.CommandResolver;
 import org.company.dto.PositionCommandsLine;
 import org.company.io.IOHelper;
 import org.company.io.MowerBufferdReader;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.stream.IntStream;
 
 public class BusinessService {
 
