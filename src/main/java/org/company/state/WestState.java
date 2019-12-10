@@ -28,6 +28,10 @@ public class WestState extends State {
 
     @Override
     public void advance() {
-        mower.getPosition().setAbsciss(mower.getPosition().getAbsciss() - 1);
+        int previousAbsciss = mower.getPosition().getCoordinate().getAbsciss();
+        int newAbsciss = previousAbsciss - 1;
+        if (newAbsciss >= Pelouse.getInstance().getLowerCornerCoordinate().getAbsciss()) {
+            mower.getPosition().getCoordinate().setAbsciss(newAbsciss);
+        }
     }
 }

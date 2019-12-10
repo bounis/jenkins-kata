@@ -11,6 +11,9 @@ public enum Orientation {
         this.acrony = s;
     }
 
+    public String getAcrony() {
+        return acrony;
+    }
 
     public static Orientation fromValue(String s) {
         return Arrays.stream(Orientation.values()).filter(v -> v.acrony.equals(s)).findFirst().get();

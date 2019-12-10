@@ -1,0 +1,6 @@
+2019-12-10T15:30:03.184  internel server after calling sinapps-mapper verifier garantie dto does not have garanties
+2019-12-10T15:29:39.381  internel server after calling sinapps-mapper verifier garantie dto does not have garanties
+2019-12-10T15:27:33.402  internel server after calling sinapps-mapper on qualifier sinistre
+2019-12-10T15:04:29.627  same as above but on qualifier risque
+2019-12-10T15:04:29.891  same as verifier garantie
+2019-12-10T14:57:40.481  qualifierRisque

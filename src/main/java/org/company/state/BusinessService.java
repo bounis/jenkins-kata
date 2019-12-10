@@ -11,11 +11,19 @@ import java.util.stream.IntStream;
 
 public class BusinessService {
 
+    private static final BusinessService businessService = new BusinessService();
 
-    public void start(Path path) {
+    private BusinessService() {
+    }
+
+    public static BusinessService getInstance() {
+        return businessService;
+    }
+
+    public void startMowers(Path path) {
 
         try (MowerBufferdReader br = IOHelper.createMowerBufferedReader(path)) {
-            String s = br.readLine();
+            Pelouse.createPelouse(br.readLine());
             br.readLines().forEach(this::runMower);
 
         } catch (IOException e) {
@@ -29,6 +37,7 @@ public class BusinessService {
         State state = StateResolver.resolve(position.getOrientation());
         Mower mower = new Mower(position, state);
         state.setMower(mower);
+        Pelouse.getInstance().addMower(mower);
         IntStream chars = positionCommandsLine.getCommandsLine().chars();
         chars.mapToObj(CommandResolver::resolve).forEach(cmd -> cmd.execute(mower));
         System.out.println(mower.getPosition());

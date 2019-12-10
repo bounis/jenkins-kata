@@ -1,26 +1,29 @@
 package org.company.state;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@EqualsAndHashCode
 public class Position {
 
-    private int absciss;
-    private int ordinate;
+    private Point coordinate;
     private Orientation orientation;
 
 
     public static Position createPosition(String positonLine) {
         String regex = " ";
         String[] strings = positonLine.split(regex);
-        return new Position(Integer.parseInt(strings[0]), Integer.parseInt(strings[1]), Orientation.fromValue(strings[2]));
+        return new Position
+                (new Point(Integer.parseInt(strings[0]), Integer.parseInt(strings[1])), Orientation.fromValue(strings[2]));
+    }
+
+    @Override
+    public String toString() {
+        return coordinate.getAbsciss() + " "
+                + coordinate.getOrdinate() + " "
+                + orientation.getAcrony();
     }
 }

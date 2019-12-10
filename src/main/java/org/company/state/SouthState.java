@@ -30,6 +30,10 @@ public class SouthState extends State {
 
     @Override
     public void advance() {
-        mower.getPosition().setOrdinate(mower.getPosition().getOrdinate() - 1);
+        int previousOrdinate = mower.getPosition().getCoordinate().getOrdinate();
+        int newOrdinate = previousOrdinate - 1;
+        if (newOrdinate >= Pelouse.getInstance().getLowerCornerCoordinate().getOrdinate()) {
+            mower.getPosition().getCoordinate().setOrdinate(newOrdinate);
+        }
     }
 }
